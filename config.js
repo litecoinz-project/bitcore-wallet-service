@@ -44,13 +44,6 @@ var config = {
         provider: 'insight',
         url: 'http://localhost:3001',
       },
-      testnet: {
-        provider: 'insight',
-        url: 'http://localhost:3001',
-        // url: 'http://localhost:3001',
-        // Multiple servers (in priority order)
-        // url: ['http://a.b.c', 'https://test-insight.bitpay.com:443'],
-      },
     },
   },
   pushNotificationsOpts: {
@@ -77,7 +70,6 @@ var config = {
   //  defaultUnit: 'ltz',
   //  publicTxUrlTemplate: {
   //    livenet: 'https://insight.bitpay.com/tx/{{txid}}',
-  //    testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
   //  },
   //},
   //

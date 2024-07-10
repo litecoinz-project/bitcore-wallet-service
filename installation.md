@@ -74,11 +74,7 @@ An example of this configuration is:
     livenet: {
       provider: 'insight',
       url: 'https://insight.bitpay.com:443',
-    },
-    testnet: {
-      provider: 'insight',
-      url: 'https://test-insight.bitpay.com:443',
-    },
+    }
   }
 ```
 
