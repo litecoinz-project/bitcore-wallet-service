@@ -1,5 +1,5 @@
 
-# bitcore-wallet-service-ltz
+# bitcore-wallet-service-litecoinz
 
 [![NPM Package](https://img.shields.io/npm/v/bitcore-wallet-service.svg?style=flat-square)](https://www.npmjs.org/package/bitcore-wallet-service)
 
@@ -19,15 +19,15 @@ More about BWS at https://blog.bitpay.com/announcing-the-bitcore-wallet-suite/
 
 # Getting Started
 ```
- git clone https://github.com/joebl4ck/bitcore-wallet-service-ltz.git
- cd bitcore-wallet-service-ltz && npm start
+ git clone https://github.com/joebl4ck/bitcore-wallet-service-litecoinz.git
+ cd bitcore-wallet-service-litecoinz && npm start
 ```
 
 This will launch the BWS service (with default settings) at `https://bws.litecoinz.org/bws/api`.
 
 BWS needs mongoDB. You can configure the connection at `config.js`
 
-BWS supports SSL and Clustering. For a detailed guide on installing BWS with extra features see [Installing BWS](https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/installation.md).
+BWS supports SSL and Clustering. For a detailed guide on installing BWS with extra features see [Installing BWS](https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/installation.md).
 
 BWS uses by default a Request Rate Limitation to CreateWallet endpoint. If you need to modify it, check defaults.js' `Defaults.RateLimit`
 
@@ -57,7 +57,7 @@ See [Bitcore Wallet Client](https://github.com/joebl4ck/bitcore-wallet-client-lt
 `/v1/wallets/`: Get wallet information
 
 Returns:
- * Wallet object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/lib/model/wallet.js)).
+ * Wallet object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/lib/model/wallet.js)).
 
 `/v1/txhistory/`: Get Wallet's transaction history
 
@@ -81,12 +81,12 @@ Returns:
 
 `/v1/txproposals/`:  Get Wallet's pending transaction proposals and their status
 Returns:
- * List of pending TX Proposals. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/lib/model/txproposal.js))
+ * List of pending TX Proposals. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/lib/model/txproposal.js))
 
 `/v1/addresses/`: Get Wallet's main addresses (does not include change addresses)
 
 Returns:
- * List of Addresses object: (https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/lib/model/address.js)).  This call is mainly provided so the client check this addresses for incoming transactions (using a service like [Insight](https://insight.is)
+ * List of Addresses object: (https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/lib/model/address.js)).  This call is mainly provided so the client check this addresses for incoming transactions (using a service like [Insight](https://insight.is)
 
 `/v1/balance/`:  Get Wallet's balance
 
@@ -151,13 +151,13 @@ Required Arguments:
  * (opt) excludeUnconfirmedUtxos: Do not use UTXOs of unconfirmed transactions as inputs for this TX.
 
 Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/lib/model/txproposal.js)). `.id` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/lib/model/txproposal.js)). `.id` is probably needed in this case.
 
 
 `/v1/addresses/`: Request a new main address from wallet
 
 Returns:
- * Address object: (https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/lib/model/address.js)). Note that `path` is returned so client can derive the address independently and check server's response.
+ * Address object: (https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/lib/model/address.js)). Note that `path` is returned so client can derive the address independently and check server's response.
 
 `/v1/txproposals/:id/signatures/`: Sign a transaction proposal
 
@@ -165,17 +165,17 @@ Required Arguments:
  * signatures:  All Transaction's input signatures, in order of appearance.
 
 Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
 
 `/v1/txproposals/:id/broadcast/`: Broadcast a transaction proposal
 
 Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
 
 `/v1/txproposals/:id/rejections`: Reject a transaction proposal
 
 Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
 
 `/v1/addresses/scan`: Start an address scan process looking for activity.
 
@@ -194,7 +194,7 @@ Required Arguments:
 `/v1/txproposals/:id/`: Deletes a transaction proposal. Only the creator can delete a TX Proposal, and only if it has no other signatures or rejections
 
  Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-ltz/blob/master/lib/model/txproposal.js)). `.id` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/joebl4ck/bitcore-wallet-service-litecoinz/blob/master/lib/model/txproposal.js)). `.id` is probably needed in this case.
 
 `/v1/txconfirmations/:txid`: Unsubscribe from transaction `txid` and no longer listen to its confirmation.
 
@@ -217,4 +217,4 @@ Required Arguments:
 
 
 
-# bitcore-wallet-service-ltz
+# bitcore-wallet-service-litecoinz

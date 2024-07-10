@@ -2,7 +2,7 @@
 
 var LevelStorage = require('../lib/storage_leveldb');
 var MongoStorage = require('../lib/storage');
-var Bitcore = require('bitcore-lib-ltz');
+var Bitcore = require('bitcore-lib-litecoinz');
 
 var level = new LevelStorage({
   dbPath: './db',
